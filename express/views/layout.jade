@@ -1,0 +1,40 @@
+doctype html
+html(ng-app="example-hyper-angular-project", prefix="og: http://ogp.me/ns#")
+	head
+		include components/stylesheets
+		include components/meta
+
+		base(href='/')
+
+		title Example HyperAngular Project
+
+	body
+		div(header)
+
+		div.mainContent
+			div.container
+				block body
+
+		div(footer)
+		script(src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js")
+		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-resource.min.js")
+		script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular-sanitize.min.js")
+		script(src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js")
+		script(src="/js/lib/bower_components/angular-ui-router/release/angular-ui-router.min.js")
+		script(src="/js/lib/bower_components/lodash/dist/lodash.compat.min.js")
+		script(src="/js/lib/bower_components/moment/min/moment.min.js")
+		script(src="/js/lib/bower_components/underscore.string/dist/underscore.string.min.js")
+		script(src="js/app.js")
+		script(src="js/controllers/controllers.js")
+		script(src="js/controllers/byteCount/byteCount.js")
+		script(src="js/controllers/home/home.js")
+		script(src="js/controllers/readme/readme.js")
+		script(src="js/directives/directives.js")
+		script(src="js/directives/byteCount/byteCount.js")
+		script(src="js/directives/footer/footer.js")
+		script(src="js/directives/header/header.js")
+		script(src="js/filters/filters.js")
+		script(src="js/filters/handlebarify/handlebarify.js")
+		script(src="js/services/services.js")
+		script(src="js/services/readme/readme.js")
