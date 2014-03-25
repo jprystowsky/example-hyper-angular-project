@@ -1,0 +1,26 @@
+@import "less/components/colors";
+@import "less/components/borders";
+@import "less/components/spacing";
+@import "less/navbar";
+
+html, body {
+	height: 100%;
+}
+
+.mainContent {
+	min-height: 100%;
+	height: auto;
+	margin: 0 auto -@footerHeight;
+	padding: 0 0 @footerHeight;
+}
+
+body {
+	.areaPaddingTop;
+}
+
+footer {
+	.areaPaddingTop;
+	text-align: center;
+	border-top: 1px solid darken(@lightGray, 50%);
+	height: @footerHeight;
+}

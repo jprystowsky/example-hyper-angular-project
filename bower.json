@@ -1,0 +1,24 @@
+{
+	"name": "example-hyper-angular-project",
+	"version": "0.0.0",
+	"dependencies": {
+		"angular": "latest",
+		
+		"angular-ui-router": "master",
+		
+		"bootstrap": "latest",
+		"lodash": "latest",
+		"moment": "latest",
+		"underscore.string": "latest"
+	},
+	"devDependencies": {
+		"angular-mocks": "latest",
+		"angular-resource": "latest",
+		"chai": "latest",
+		"chai-as-promised": "latest",
+		"mocha": "latest",
+		"sinon": "latest",
+		"sinon-chai": "latest"
+	}
+}
+

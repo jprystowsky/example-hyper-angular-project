@@ -1,0 +1,11 @@
+@shadowLength: 2px;
+
+.shadow(@shadow; @color) {
+  -webkit-box-shadow: @shadow @color;
+  -moz-box-shadow: @shadow @color;
+  box-shadow: @shadow @color;
+}
+
+.bottomShadow() {
+  @bottomShadow: 0 @shadowLength 9px 0;
+}

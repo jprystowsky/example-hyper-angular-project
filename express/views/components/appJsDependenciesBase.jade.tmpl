@@ -1,0 +1,19 @@
+			if (typeof grunt !== 'undefined') {
+				grunt
+					.config('appExternalScripts')[grunt.config('environment')]
+					.forEach(function (val) {
+						print('\t\tscript(src="' + val + '")\n');
+					});
+
+				grunt
+					.config('appBowerScripts')[grunt.config('environment')]
+					.forEach(function (val) {
+						print('\t\tscript(src="/js/lib/bower_components/' + val + '")\n');
+					});
+				
+				grunt
+					.config('appScripts')[grunt.config('environment')]
+					.forEach(function (val) {
+						print('\t\tscript(src="' + val + '")\n');
+					});
+			}

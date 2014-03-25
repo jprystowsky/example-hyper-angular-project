@@ -1,0 +1,10 @@
+link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css')
+link(rel="stylesheet", href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css")
+
+<%
+grunt
+	.config('appStyles')[grunt.config('environment')]
+	.forEach(function (val) {
+		print('link(rel="stylesheet", href="' + val + '")\n');
+	});
+%>
