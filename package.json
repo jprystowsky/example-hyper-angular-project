@@ -9,6 +9,7 @@
 	"repository": "jprystowsky/Example HyperAngular Project",
 	"author": {
 		"name": "jprystowsky",
+		"email": "",
 		"url": "https://github.com/jprystowsky"
 	},
 	"keywords": [
@@ -55,6 +56,7 @@
 		"karma-sinon": "latest",
 		"karma-phantomjs-launcher": "latest",
 		"load-grunt-tasks": "latest",
+		"phantomjs": "latest",
 		"protractor": "latest",
 		"sinon": "latest",
 		"sinon-chai": "latest"
