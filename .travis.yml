@@ -4,4 +4,4 @@ node_js:
 before_script:
   - npm install -g grunt-cli phantomjs
   - bower install
-  - which phantomjs
+  - exports PHANTOMJS_BIN=`which phantomjs`
