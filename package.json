@@ -23,10 +23,12 @@
 		"underscore.string": "latest"
 	},
 	"devDependencies": {
+		"body-parser": "latest",
 		"bower": "latest",
 		"chai": "latest",
 		"chai-as-promised": "latest",
 		"chalk": "latest",
+		"errorhandler": "latest",
 		"express": "latest",
 		"glob": "latest",
 		"grunt": "latest",
@@ -56,8 +58,11 @@
 		"karma-sinon": "latest",
 		"karma-phantomjs-launcher": "latest",
 		"load-grunt-tasks": "latest",
+		"method-override": "latest",
+		"morgan": "latest",
 		"phantomjs": "latest",
 		"protractor": "latest",
+		"serve-static": "latest",
 		"sinon": "latest",
 		"sinon-chai": "latest"
 	}

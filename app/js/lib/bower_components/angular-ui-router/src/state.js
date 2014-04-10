@@ -133,6 +133,8 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
   }
 
   function findState(stateOrName, base) {
+    if (!stateOrName) return undefined;
+
     var isStr = isString(stateOrName),
         name  = isStr ? stateOrName : stateOrName.name,
         path  = isRelative(name);
@@ -1043,29 +1045,20 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
 
     $state.includes = function includes(stateOrName, params) {
       if (isString(stateOrName) && isGlob(stateOrName)) {
-        if (doesStateMatchGlob(stateOrName)) {
-          stateOrName = $state.$current.name;
-        } else {
+        if (!doesStateMatchGlob(stateOrName)) {
           return false;
         }
+        stateOrName = $state.$current.name;
       }
-
       var state = findState(stateOrName);
+
       if (!isDefined(state)) {
         return undefined;
       }
-
       if (!isDefined($state.$current.includes[state.name])) {
         return false;
       }
-
-      var validParams = true;
-      angular.forEach(params, function(value, key) {
-        if (!isDefined($stateParams[key]) || $stateParams[key] !== value) {
-          validParams = false;
-        }
-      });
-      return validParams;
+      return equalForKeys(params, $stateParams);
     };
 
 
@@ -1125,7 +1118,7 @@ function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
      * @returns {object|array} State configuration object or array of all objects.
      */
     $state.get = function (stateOrName, context) {
-      if (!isDefined(stateOrName)) {
+      if (arguments.length === 0) {
         var list = [];
         forEach(states, function(state) { list.push(state.self); });
         return list;

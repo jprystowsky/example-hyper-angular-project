@@ -20,11 +20,11 @@
     "files.js"
   ],
   "homepage": "https://github.com/angular-ui/ui-router",
-  "_release": "3a03042fc5",
+  "_release": "730b76f597",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "3a03042fc5547c8eeda282070c4de720d1ef450c"
+    "commit": "730b76f59770009967f9691ddeecba9fbbef4cb2"
   },
   "_source": "git://github.com/angular-ui/ui-router.git",
   "_target": "master",
