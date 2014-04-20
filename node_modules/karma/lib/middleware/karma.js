@@ -54,10 +54,10 @@ var getXUACompatibleUrl = function(url) {
 };
 
 var createKarmaMiddleware = function(filesPromise, serveStaticFile,
-    /* config.basePath */ basePath,  /* config.urlRoot */ urlRoot) {
+    /* config.basePath */ basePath,  /* config.urlRoot */ urlRoot, /* config.client */ client) {
 
   return function(request, response, next) {
-    var requestUrl = request.url.replace(/\?.*/, '');
+    var requestUrl = request.normalizedUrl.replace(/\?.*/, '');
 
     // redirect /__karma__ to /__karma__ (trailing slash)
     if (requestUrl === urlRoot.substr(0, urlRoot.length - 1)) {
@@ -130,17 +130,24 @@ var createKarmaMiddleware = function(filesPromise, serveStaticFile,
             return util.format('  \'%s\': \'%s\'', filePath, file.sha);
           });
 
+          var clientConfig = '';
+
+          if (requestUrl === '/debug.html') {
+            clientConfig = 'window.__karma__.config = ' + JSON.stringify(client) + ';\n';
+          }
+
           mappings = 'window.__karma__.files = {\n' + mappings.join(',\n') + '\n};\n';
 
           return data.
             replace('%SCRIPTS%', scriptTags.join('\n'))
+            .replace('%CLIENT_CONFIG%', clientConfig)
             .replace('%MAPPINGS%', mappings)
             .replace('\n%X_UA_COMPATIBLE%', getXUACompatibleMetaElement(request.url));
         });
       }, function(errorFiles) {
         serveStaticFile(requestUrl, response, function(data) {
           common.setNoCacheHeaders(response);
-          return data.replace('%SCRIPTS%', '').replace('%MAPPINGS%',
+          return data.replace('%SCRIPTS%', '').replace('%CLIENT_CONFIG%', '').replace('%MAPPINGS%',
               'window.__karma__.error("TEST RUN WAS CANCELLED because ' +
               (errorFiles.length > 1 ? 'these files contain' : 'this file contains') +
               ' some errors:\\n  ' + errorFiles.join('\\n  ') + '");');
