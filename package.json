@@ -50,6 +50,7 @@
 		"grunt-express-server": "latest",
 		"grunt-protractor-runner": "latest",
 		"grunt-protractor-webdriver": "latest",
+		"has-color": "latest",
 		"jade": "latest",
 		"mocha": "latest",
 		"karma": "latest",
