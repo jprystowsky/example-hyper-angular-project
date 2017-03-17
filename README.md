@@ -149,7 +149,7 @@ We've included [`grunt-bump`](https://github.com/vojtajina/grunt-bump) for you a
 
 * [Protractor](https://github.com/angular/protractor)
 * [Karma](http://karma-runner.github.io/) (with a bunch of helper libs)
-* [Mocha](http://visionmedia.github.io/mocha/)
+* [Mocha](http://mochajs.org/)
 * [Chai](http://chaijs.com/)
 * [Chai-as-promised](http://chaijs.com/plugins/chai-as-promised)
 * [Sinon.js](http://sinonjs.org/)
